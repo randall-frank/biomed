@@ -1,10 +1,9 @@
  10  REM load the code core for relocation
  20  PRINT  CHR$ (4);"BLOAD HRCGPRO"
- 30  PRINT  CHR$ (4);"BLOAD FONT,A$2900"
- 40  REM run the relocation code
- 50  PRINT  CHR$ (4);"BRUN HRCGPROINST"
- 60  REM  Install the generator
- 70  CALL 8 * 4096 + 15 * 256
- 80  POKE 230, 32 : REM $E6 -> $20 for HGR1 MASSDRAW.OBJ0
- 90  PRINT  CHR$ (4);"RUN HEART.MENU"
+ 30  REM run the relocation code
+ 40  PRINT  CHR$ (4);"BRUN HRCGPROINST"
+ 50  REM  Install the generator
+ 60  CALL 8 * 4096 + 15 * 256
+ 70  POKE 230, 32 : REM $E6 -> $20 for HGR1 MASSDRAW.OBJ0
+ 80  PRINT  CHR$ (4);"RUN HEART.MENU"
  
