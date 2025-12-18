@@ -1,5 +1,5 @@
          org   $2000
-         dsk   ../bin/HRCGINST#062000
+         dsk   ../bin/HRCGPROINST#062000
          typ   $06        ; /BIN file
 
 GETBUFR         =     $bef5             ; Allocate a basic.system buffer

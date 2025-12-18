@@ -9,6 +9,12 @@
 * and modified the CSW and KSW connections to follow ProDOS.  Note,
 * the use of things like pr# and in# could easily disconnect it.
 
+                          ; code addr is $8f00
+                          ; file load addr is $2100 to work with HRCGPROINST
+                org   $8f00
+                dsk   ../bin/HRCGPRO#062100
+                typ   $06  
+
 blink_delay     =     $50       ;cursor blink delay
 MON_WNDLEFT     =     $20               ;left column of scroll window
 MON_WNDWDTH     =     $21               ;width of scroll window
@@ -47,11 +53,7 @@ VECTIN          =     $be32             ; KSWL
 VECTOUT         =     $be30             ; CSWL
 GETBUFR         =     $bef5             ; Allocate a basic.system buffer
 
-                          ; code addr is $8f00
-                          ; file load addr is $2100 to work with HRCG.INST
-                org   $8f00
-                dsk   ../bin/HRCG#062100
-                typ   $06        ; /BIN file
+* Entry points
 
 hgr_entry       jmp    setuphgr1   ; $8f00 - hgr1
 hgr2_entry      jmp    setuphgr2   ; $8f03 - hgr2

@@ -36,7 +36,7 @@ with open(os.path.join("src","VERSION.S"), "w") as out:
 with open(os.path.join("bin", "VERSION#040000"), "w") as out:
     out.write(version)
 
-files = ["HRCG.S", "HRCGINST.S", "MASSDRAW.S"]
+files = ["HRCGPRO.S", "HRCGPROINST.S", "MASSDRAW.S"]
 
 log.info("Assembling 6502 source code...")
 
