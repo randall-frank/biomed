@@ -1,25 +1,38 @@
- 5  REM ONERR  GOTO 200
+ 0  GOSUB 3000
+ 5  ONERR  GOTO 200
  6  REM POKE 1011,0: POKE 214,214
  10  REM POKE 251,1
  13 PRINT CHR$(1);"2"
  14 CL$ = CHR$(16)+CHR$(17)
  15 PRINT CL$
- 20  VTAB 4: HTAB 12: PRINT "The heart and EKG:": VTAB 6: HTAB 9: PRINT "A computerized approach"
- 30  VTAB 10: HTAB 8: PRINT "Which would you like (1/2)?": VTAB 12: HTAB 10: PRINT "1. Structure and operation": VTAB 14: HTAB 10: PRINT "2. Electrical system"
- 40  VTAB 17: HTAB 8: PRINT "(To end a program early": VTAB 19: HTAB 5: PRINT "'CONTROL-C' will run this menu)"
- 49  VTAB 22: HTAB 11: PRINT "Copyright (C) 1984"
- 50  VTAB 23: HTAB 1: PRINT "By: R. Frank, J. Kelly and B. Bergquist"
+ 20  VTAB 3: HTAB 12: PRINT "The heart and EKG:"
+ 25  VTAB 4: HTAB 9: PRINT "A computerized approach"
+ 26  VTAB 5: HTAB 14: PRINT "Version: ";VN$
+ 30  VTAB 8: HTAB 8: PRINT "Which would you like (1/2/3)?"
+ 35  VTAB 10: HTAB 10: PRINT "1. Structure and operation"
+ 38  VTAB 12: HTAB 10: PRINT "2. Electrical system"
+ 39  VTAB 14: HTAB 10: PRINT "3. Exit (ProDOS BYE)"
+ 40  VTAB 17: HTAB 8: PRINT "(To end a program early"
+ 45  VTAB 18: HTAB 5: PRINT "'CONTROL-C' will run this menu)"
+ 49  VTAB 21: HTAB 11: PRINT "Copyright (C) 1984"
+ 50  VTAB 22: HTAB 1: PRINT "By: R. Frank, J. Kelly and B. Bergquist"
  60  POKE 49168,1
  70 A =  PEEK (49152)
  80  IF A = 177 THEN  PRINT : PRINT CHR$(4);"RUN LABELS"
  90  IF A = 178 THEN 210
+ 95  IF A = 179 THEN PRINT : PRINT CHR$(4);"BYE"
  100  GOTO 70
- 200  PRINT : PRINT CHR$(4);"RUN HEART.MENU"
+ 200  PRINT CHR$(4);"RUN HEART.MENU"
  201  GOTO 200
- 210  PRINT CL$ : PRINT " IN THE FOLLOWING PROGRAM YOU WILL BE  "; SPC( 41);"PROMPTED TO FILL IN BLANKS (.....) WITH"; SPC( 41);"ANSWERS FROM THE TEXT."
- 215  PRINT : PRINT "ANSWERS FOR EACH BLANK MUST BE SPELLED "; SPC( 41);"COMPLETELY AND CORRECTLY."
- 220  VTAB 22: PRINT "           PRESS RETURN";
+ 210  PRINT CL$ : PRINT " In the following program you will be  "; SPC( 41);"prompted to fill in blanks (.....) with"; SPC( 41);"answers from the text."
+ 215  PRINT : PRINT "Answers for each blank must be spelled "; SPC( 41);"completely and correctly."
+ 220  VTAB 22: PRINT "           Press RETURN";
  230  POKE 49168,1
  240  IF  PEEK (49152) <  > 141 THEN 240
  250  VTAB 10: PRINT : PRINT CHR$(4);"RUN LABELS2"
  260  GOTO 200
+3000 PRINT CHR$(4);"OPEN VERSION"
+3010 PRINT CHR$(4);"READ VERSION"
+3020 INPUT VN$
+3030 PRINT CHR$(4);"CLOSE VERSION"
+3040 RETURN
