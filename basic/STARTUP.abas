@@ -1,0 +1,9 @@
+ 10 REM load the code core for relocation
+ 20  PRINT  CHR$ (4);"BLOAD HRCG"
+ 30  PRINT  CHR$ (4);"BLOAD FONT,A$2900"
+ 40 REM run the relocation code
+ 50  PRINT  CHR$ (4);"BRUN HRCGINST"
+ 60  REM  Install the generator
+ 70  CALL 8 * 4096 + 15 * 256
+ 90  PRINT  CHR$ (4);"RUN HEART.MENU"
+ 

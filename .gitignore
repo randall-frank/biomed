@@ -1,0 +1,12 @@
+merlin*/
+ciderpres*/
+bin/PRINT*
+bin/_*
+bin/MASSDRAW*
+bin/HRCG*
+/*.2mg
+/*.po
+/font.png
+.vscode/
+SYSTEM/DEFLECT.SYSTEM*
+src/VERSION.S

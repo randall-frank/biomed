@@ -1,0 +1,27 @@
+
+
+This Technical Note discusses I/O redirection differences between DOS 3.3 and ProDOS.
+
+Note: Yes, there are two "revised" by-lines and no "written" by-line for this Technical Note. 
+This is how I found it online. -- AH
+
+Under DOS 3.3, all that is necessary to change the I/O hooks is installing your I/O routine 
+addresses in the character-out vector ($36-$37) and the key-in vector ($38-$39) and notifying 
+DOS (JSR $3EA) to take your addresses and swap in its intercept routine addresses.
+
+Under ProDOS, there is no instruction installed at $3EA, so what do you do?
+
+You simply leave the ProDOS BASIC command interpreter's intercept addresses installed at 
+$36-$39 and install your I/O addresses in the global page at $BE30-$BE33. The locations 
+$BE30-$BE31 should contain the output address (normally $FDF0, the Monitor COUT1 routine), 
+while $BE32-$BE33 should contain the input address (normally $FD1B, the Monitor KEYIN routine).
+
+By keeping these vectors in a global page, a special routine for moving the vectors is no 
+longer needed, thus, no $3EA instruction. You install the addresses at their destination 
+yourself.
+
+If you intend to switch between devices (i.e., the screen and the printer), you should 
+save the hooks you find in $BE30-$BE33 and restore them when you are done. Blindly replacing 
+the values in the global page could easily leave you no way to restore input or output to 
+the previous device when you are done.
+
