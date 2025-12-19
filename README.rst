@@ -34,9 +34,10 @@ high resolution character generator.  The loader has been rewritten to insert
 the engine between the ProDOS BI and the first file buffers (avoiding the need to
 manipulate HIMEM).  It has two built-in typefaces that can be switched between
 at runtime.  The source makes it pretty easy to drop in your own typeface.  
-The A.B.C. editor included with FlexText can be used to generate/manipulate
-fonts in the correct format.  Note that fonts can be loaded from disk on
-the fly as well.
+The `A.B.C.` editor included 
+with `Flex Type <https://beagle.applearchives.com/vintage-software/>`_ can be 
+used to generate/manipulate fonts in the correct format.  Note that fonts can be 
+loaded from disk on the fly as well.
 
 There is a build script in this repo that is capable of generating a .po file 
 from the sources.  It requires several tools to be installed:
