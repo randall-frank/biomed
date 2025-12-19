@@ -5,17 +5,23 @@
  13 PRINT CHR$(1);"2"
  14 CL$ = CHR$(16)+CHR$(17)
  15 PRINT CL$
- 20  VTAB 3: HTAB 12: PRINT "The heart and EKG:"
- 25  VTAB 4: HTAB 9: PRINT "A computerized approach"
- 26  VTAB 5: HTAB 14: PRINT "Version: ";VN$
+ 16 F1$ = CHR$(1) + "1"
+ 17 F2$ = CHR$(1) + "2"
+ 20  VTAB 2: HTAB 7: PRINT F1$;"hbbbbbbbbbbbbbbbbbbbbbbbbbbbi"
+ 21  VTAB 3: HTAB 7: PRINT "g   ";F2$;"The heart and EKG:";F1$;"      g"
+ 25  VTAB 4: HTAB 7: PRINT "g  ";F2$;"A computerized approach";F1$;"  g"
+ 28  VTAB 5: HTAB 7: PRINT "g       ";F2$;"Version: ";VN$;F1$;"      g"
+ 29  VTAB 6: HTAB 7: PRINT "jbbbbbbbbbbbbbbbbbbbbbbbbbbbk";F2$
  30  VTAB 8: HTAB 8: PRINT "Which would you like (1/2/3)?"
  35  VTAB 10: HTAB 10: PRINT "1. Structure and operation"
  38  VTAB 12: HTAB 10: PRINT "2. Electrical system"
  39  VTAB 14: HTAB 10: PRINT "3. Exit (ProDOS BYE)"
- 40  VTAB 17: HTAB 8: PRINT "(To end a program early"
- 45  VTAB 18: HTAB 5: PRINT "'CONTROL-C' will run this menu)"
- 49  VTAB 21: HTAB 11: PRINT "Copyright (C) 1984"
- 50  VTAB 22: HTAB 1: PRINT "By: R. Frank, J. Kelly and B. Bergquist"
+ 40  VTAB 17: HTAB 6: PRINT "To end a program early, press"
+ 45  VTAB 18: HTAB 4: PRINT "'CTRL-C' to return to this menu."
+ 48  VTAB 20: HTAB 1: PRINT F1$;"hbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbi"
+ 49  VTAB 21: HTAB 1: PRINT "g";F2$;"          Copyright (C) 1984";F1$;"         g"
+ 50  VTAB 22: HTAB 1: PRINT "g";F2$;" R. Frank, J. Kelly and B. Bergquist";F1$;" g"
+ 55  VTAB 23: HTAB 1: PRINT "jbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbk";F2$
  60  POKE 49168,1
  70 A =  PEEK (49152)
  80  IF A = 177 THEN  PRINT : PRINT CHR$(4);"RUN LABELS"

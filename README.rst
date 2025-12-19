@@ -19,16 +19,24 @@ The heart and EKG: A computerized approach
 
 Overview
 --------
-This is an educational software package developed in 1984 as part of the
+This is an educational software package developed in 1984 during the saturday
 `Biomed program <biomed.png>`_ at the Malcolm Price Laboratory School (also known 
-as Northern University High School).
-
-TBD
+as Northern University High School).  It describes the basic physiology of the
+heart and the electrical system and it's relationship to the heartbeat.
 
 Details
 -------
 The software is written mainly in Applesoft Basic with a bit of 6502 assembly
 to support the text generator and the graphics images.
+
+An interesting piece of the source is a ProDOS version of the Apple DOS Toolkit
+high resolution character generator.  The loader has been rewritten to insert
+the engine between the ProDOS BI and the first file buffers (avoiding the need to
+manipulate HIMEM).  It has two built-in typefaces that can be switched between
+at runtime.  The source makes it pretty easy to drop in your own typeface.  
+The A.B.C. editor included with FlexText can be used to generate/manipulate
+fonts in the correct format.  Note that fonts can be loaded from disk on
+the fly as well.
 
 There is a build script in this repo that is capable of generating a .po file 
 from the sources.  It requires several tools to be installed:

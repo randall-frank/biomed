@@ -786,5 +786,5 @@ hires_addr_tbl  hex   0000000050505050a0a0a0a0 ;12 bytes (24 lines)
 ; ASCII chars A0-FF.
 
 builtin_charset 
-                put     HRCGBASEFONT.S
+                put     BORDERFONT.S
                 put     BOLDFONT.S
