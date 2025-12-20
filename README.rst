@@ -24,17 +24,19 @@ This is an educational software package developed in 1984 during the saturday
 as Northern University High School).  It describes the basic physiology of the
 heart and the electrical system and it's relationship to the heartbeat.
 
-.. image:: animate.gif
-   :alt: Heartbeat
-   :width: 200%
-   :align: center
+.. raw:: html
 
-| 
+   <p align="center">
+     <img src="animate.gif" alt="Beating heart" with="400">
+   </p>
 
-.. image:: ekg.gif
-   :alt: EKG
-   :width: 200%
-   :align: center
+|
+
+.. raw:: html
+
+   <p align="center">
+     <img src="ekg.gif" alt="EKG" with="400">
+   </p>
 
 
 Details
@@ -81,7 +83,7 @@ burn a 5.25" disk with the image.  Thanks to the great work by Chris Torrence
 and Michael Morrison on the `Apple2TS <https://github.com/ct6502/apple2ts>`_ browser 
 hosted Apple II emulator, one can play the game via a web browser.  
 
-`Run the applications in a browser <https://apple2ts.com/?appmode=game&theme=dark#https://github.com/randall-frank/biomed/releases/download/v1.1.0/Biomed_Release.po>`_
+`Run the applications in a browser <https://apple2ts.com/?appmode=game&theme=dark#https://github.com/randall-frank/biomed/releases/download/v1.0.0/Biomed_Release.po>`_
 
 Please feel free to post issues and other questions at `Biomed Issues
 <https://github.com/randall-frank/biomed/issues>`_. This is the best place
