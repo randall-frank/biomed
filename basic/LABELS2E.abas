@@ -1,19 +1,20 @@
  0 CL$ = CHR$(16)+CHR$(17)
  10  ONERR  GOTO 1000
  120 K = 3
- 130  PRINT CL$: VTAB 1: HTAB 2: PRINT "PARTIAL OR TOTAL HEART BLOCK REFERS TO"; SPC( 41);"BLOCKAGE OF THE .......... ....... BE-"; SPC( 42);"TWEEN ATRIA AND VENTRICLES.":V = 3:H = 17:A$ = "ELECTRICAL": GOSUB 21000:H = 28:A$ = "SIGNALS": GOSUB 21000: GOSUB 19000
- 140  PRINT CL$: VTAB 1: HTAB 1: PRINT "IN PARTIAL HEART BLOCK SOME, BUT NOT ALL"; SPC( 40);"OF THE SIGNALS PASS THROUGH THE AV NODE "; SPC( 40);"TO THE VENTRICLES.  WITHOUT PROPER SIG- "; SPC( 40);"NALS FROM THE SA NODE, THE VENTRICLE"; SPC( 43);
- 150  PRINT " WILL ESTABLISH ITS OWN CONTRACTION RATE."; SPC( 40);"HOWEVER, THE VENTRICULAR RATE IS NORMAL-"; SPC( 40);"LY SLOWER THAN THE ATRIAL RATE.  THERE- "; SPC( 40);"FORE, WITH BLOCKAGE, THE TIMING OF THE  "; SPC( 40);
- 151  PRINT "ATRIAL EVENT (PWAVE) IS NOT PROPERLY"; SPC( 44);"COORDINATED WITH THE VENTRICULAR EVENTS "; SPC( 40);"(QRS AND T)."
+ 130  PRINT CL$: VTAB 1: HTAB 2: PRINT "Partial or total heart block refers to"; SPC( 41);"blockage of the .......... ....... be-"; SPC( 42);"tween atria and ventricles."
+ 135  V = 3:H = 17:A$ = "ELECTRICAL": GOSUB 21000:H = 28:A$ = "SIGNALS": GOSUB 21000: GOSUB 19000
+ 140  PRINT CL$: VTAB 1: HTAB 1: PRINT "In partial heart block some, but not all"; SPC( 40);"of the signals pass through the AV node "; SPC( 40);"to the ventricles.  Without proper sig- "; SPC( 40);"nals from the sa node, the ventricle"; SPC( 43);
+ 150  PRINT " will establish its own contraction rate."; SPC( 40);"However, the ventricular rate is normal-"; SPC( 40);"ly slower than the atrial rate.  There- "; SPC( 40);"fore, with blockage, the timing of the  "; SPC( 40);
+ 151  PRINT "atrial event (Pwave) is not properly"; SPC( 44);"coordinated with the ventricular events "; SPC( 40);"(QRS and T)."
  152  GOSUB 19000
- 160  PRINT CL$: VTAB 1: HTAB 2: PRINT "DURING HEART ..... THE TIMING OF ATRIAL"; SPC( 40);"AND VENTRICULAR CONTRACTIONS IS NOT     "; SPC( 40);"PROPERLY COORDINATED.":H = 15:V = 1:A$ = "BLOCK":K = 3: GOSUB 21000: GOSUB 19000
- 170  PRINT CL$: VTAB 1: HTAB 2: PRINT "WITH TOTAL HEART BLOCK ATRIAL AND VEN- "; SPC( 40);"TRICULAR EVENTS ARE TOTALLY INDEPENDENT."; SPC( 40);"THIS RESULTS IN INEFFICIENT PUMPING BY  "; SPC( 40);"THE HEART AND THE HEART'S OUTPUT OF"; SPC( 45);
- 171  PRINT "BLOOD TO THE BODY IS AFFECTED.": GOSUB 19000
- 180  PRINT CL$: VTAB 1: HTAB 2: PRINT "INEFFICIENT PUMPING BY THE HEART WILL  "; SPC( 40);"AFFECT THE ...... OF BLOOD FROM THE"; SPC( 45);"HEART TO THE BODY.":H = 12:V = 3:A$ = "OUTPUT": GOSUB 21000: GOSUB 19000
- 190  PRINT CL$: VTAB 1: HTAB 2: PRINT "THAT WAS THE HEART IN A NUTSHELL. IF": PRINT : PRINT "IF YOU MISSED A LOT OF QUESTIONS TRY THE": PRINT "PROGRAM AGAIN."
+ 160  PRINT CL$: VTAB 1: HTAB 2: PRINT "During heart ..... the timing of atrial"; SPC( 40);"and ventricular contractions is not     "; SPC( 40);"properly coordinated.":H = 15:V = 1:A$ = "BLOCK":K = 3: GOSUB 21000: GOSUB 19000
+ 170  PRINT CL$: VTAB 1: HTAB 2: PRINT "With total heart block atrial and ven- "; SPC( 40);"tricular events are totally independent."; SPC( 40);"This results in inefficient pumping by  "; SPC( 40);"the heart and the heart's output of"; SPC( 45);
+ 171  PRINT "blood to the body is affected.": GOSUB 19000
+ 180  PRINT CL$: VTAB 1: HTAB 2: PRINT "Inefficient pumping by the heart will  "; SPC( 40);"affect the ...... of blood from the"; SPC( 45);"heart to the body.":H = 12:V = 3:A$ = "OUTPUT": GOSUB 21000: GOSUB 19000
+ 190  PRINT CL$: VTAB 1: HTAB 2: PRINT "That was the heart in a nutshell. If": PRINT : PRINT "you missed a lot of questions try the": PRINT "program again."
  200  GOSUB 19000
  1000  PRINT : PRINT CHR$(4);"RUN HEART.MENU"
- 19000  VTAB 23: HTAB 8: PRINT "PRESS 'RETURN' TO CONTINUE";: POKE  - 16368,1
+ 19000  VTAB 23: HTAB 8: PRINT "Press 'RETURN' to continue";: POKE  - 16368,1
  19001  IF  PEEK ( - 16384) <  > 141 THEN 19001
  19002  FOR T = 19 TO 23: VTAB T: HTAB 1: PRINT  SPC( 40): NEXT T: RETURN 
  20000  POKE 0,4: POKE 1,20: POKE 4,0: POKE 3,75 + A * 5: CALL 768: RETURN 
