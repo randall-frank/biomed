@@ -24,6 +24,17 @@ This is an educational software package developed in 1984 during the saturday
 as Northern University High School).  It describes the basic physiology of the
 heart and the electrical system and it's relationship to the heartbeat.
 
+.. image:: animate.gif
+   :alt: Heartbeat
+   :align: center
+
+| 
+
+.. image:: ekg.gif
+   :alt: EKG
+   :align: center
+
+
 Details
 -------
 The software is written mainly in Applesoft Basic with a bit of 6502 assembly
