@@ -16,33 +16,35 @@
  163 A = 4: GOSUB 19900: HTAB 37: VTAB 20: PRINT "the mitral valve,": FOR T = 1 TO 40:C = 0: GOSUB 29050:C = 3: GOSUB 29050: GOSUB 29030: GOSUB 29040: NEXT T
  164 A = 5: GOSUB 19900: HTAB 14: VTAB 21: PRINT "and the aortic valve.": FOR T = 1 TO 40:C = 0: GOSUB 29060:C = 3: GOSUB 29060: GOSUB 29050: GOSUB 29040: GOSUB 29030: NEXT T
  165 A = 0: GOSUB 19900: GOSUB 29030: GOSUB 29040: GOSUB 29050: GOSUB 29060: GOSUB 19000
- 166  PRINT CL$: POKE 49168,1:A = 0: GOSUB 19900: VTAB 17: HTAB 4: PRINT "This is the beating heart. The arrows show the flow of blood through the      heart.";
- 167  PRINT " The valves keep the flow from   being reversed. Note the opening and    closing of the valves and contractions  of the muscular walls of the heart.": PRINT "         Press 'RETURN' to continue.";
+ 166  PRINT CL$: POKE 49168,1:A = 0: GOSUB 19900: VTAB 17: HTAB 4: PRINT "This is the beating heart. The arrowsshow the flow of blood through the      heart.";
+ 167  PRINT " The valves keep the flow from    being reversed. Note the opening and    closing of the valves and contractions  of the muscular walls of the heart.": PRINT "        Press 'RETURN' to continue.";
  168  FOR T = 1 TO 300: NEXT T:A = 6: GOSUB 19900: FOR T = 1 TO 300: NEXT T
  169 A = A + 1: GOSUB 19900: IF A = 9 THEN 168
  170  FOR T = 1 TO 300: NEXT T: IF  PEEK (49152) <  > 141 THEN 169
  171  PRINT CL$: PRINT : PRINT CHR$(4);"BLOAD SYSTEM"
  172  VTAB 19: HTAB 1: PRINT  SPC( 160): PRINT CL$: HTAB 4: VTAB 19: PRINT "Blood normally follows the above     pattern. The red (spotted) blood is     oxygen rich. The blue (plain) blood is  full of carbon dioxide."
- 173  HTAB 9: VTAB 23: PRINT "Press 'RETURN' to continue.":F = 0: POKE 49168,1
+ 173  HTAB 8: VTAB 23: PRINT "Press 'RETURN' to continue.":F = 0: POKE 49168,1
  174 A = 0: GOSUB 19900: FOR T = 1 TO 50: NEXT T: GOSUB 500
  175 A = A + 1: GOSUB 19900: FOR T = 1 TO 50: NEXT T: GOSUB 500: IF A = 10 THEN 174
  176  IF  PEEK (49152) <  > 141 THEN 175
- 177  PRINT CL$: VTAB 2: HTAB 4: PRINT "Why are there blue (plain) and red       (spotted) areas?": VTAB 5: HTAB 4: PRINT "A.Red blood is hot": VTAB 7: HTAB 4: PRINT "B.Red blood is oxygenated"
- 178  VTAB 9: HTAB 4: PRINT "C.Blue blood indicates royalty": VTAB 11: HTAB 4: PRINT "D.Blue blood is oxygenated": VTAB 13: HTAB 5: PRINT "Press the letter corresponding to        the correct answer."
- 179  GET A$: IF A$ < "A" OR A$ > "D" THEN  VTAB 16: HTAB 5: PRINT "A,B,C, or D please";: GOTO 179
- 180  VTAB 16: HTAB 5: PRINT  SPC( 20);: IF A$ = "B" THEN  VTAB 16: HTAB 5: PRINT "B is correct"
- 181  IF A$ <  > "B" THEN  VTAB 16: HTAB 5: PRINT "Sorry B was the correct answer"
- 182  GOSUB 19000: PRINT CL$: VTAB 1: HTAB 4: PRINT "To remember the difference between   veins and arteries remember this,       Arteries away and veins toward the heart"
- 183  VTAB 6: HTAB 6: PRINT "Press (A)teries or (V)eins": VTAB 7: HTAB 2: PRINT "Are the blue regions veins or arteries":V = 8:H = 8:R$ = "VA": GOSUB 600 
- 184  VTAB 11: HTAB 2: PRINT "Are the red regions veins or arteries":V = 12:H = 8:R$ = "AV": GOSUB 600
- 185  PRINT CL$: VTAB 11: HTAB 7: PRINT "Press (T)rue or (F)alse": VTAB 12: HTAB 2: PRINT "Oxygenated blood is carried in the ar-   teries":H = 12:V = 13:R$ = "TF": GOSUB 600: PRINT CL$
- 186  HTAB 5: VTAB 12: PRINT "What about the pulmonary veins? do  they carry blood (T)oward OR (A)way from the heart":V = 15:H = 10:R$ = "TA": GOSUB 600
- 187 HTAB 5: VTAB 19: PRINT "This is an exception to the rule.   The pulmonary veins carry oxygenated    blood toward the heart.": GOSUB 19000
- 188  PRINT CL$: VTAB 2: HTAB 7: PRINT "The flow of blood through the      heart is controlled by an electrical   system. That system will be explored    next.": GOSUB 19000
- 189 PRINT : PRINT CHR$(4);"RUN LABELS2": END 
+ 180  PRINT CL$: VTAB 2: HTAB 4: PRINT "Why are there blue (plain) and red       (spotted) areas?": VTAB 5: HTAB 4: PRINT "A.Red blood is hot": VTAB 7: HTAB 4: PRINT "B.Red blood is oxygenated"
+ 185  VTAB 9: HTAB 4: PRINT "C.Blue blood indicates royalty": VTAB 11: HTAB 4: PRINT "D.Blue blood is oxygenated": VTAB 13: HTAB 5: PRINT "Press the letter corresponding to        the correct answer."
+ 190  GET A$: : A0 = ASC(A$): IF A0 >= 97 AND A0 <= 122 THEN A$ = CHR$(A0-32)
+ 193  IF A$ < "A" OR A$ > "D" THEN  VTAB 16: HTAB 5: PRINT "A,B,C, or D please";: GOTO 190
+ 195  VTAB 16: HTAB 5: PRINT  SPC( 20);: IF A$ = "B" THEN  VTAB 16: HTAB 5: PRINT "B is correct"
+ 200  IF A$ <  > "B" THEN  VTAB 16: HTAB 5: PRINT "Sorry B was the correct answer"
+ 205  GOSUB 19000: PRINT CL$: VTAB 1: HTAB 4: PRINT "To remember the difference between   veins and arteries remember this,       Arteries away and veins toward the heart"
+ 210  VTAB 6: HTAB 6: PRINT "Press (A)teries or (V)eins": VTAB 7: HTAB 2: PRINT "Are the blue regions veins or arteries":V = 8:H = 8:R$ = "VA": GOSUB 600 
+ 215  VTAB 11: HTAB 2: PRINT "Are the red regions (V)eins or         (A)rteries":V = 12:H = 12:R$ = "AV": GOSUB 600
+ 220  PRINT CL$: VTAB 11: HTAB 7: PRINT "Press (T)rue or (F)alse": VTAB 12: HTAB 2: PRINT "Oxygenated blood is carried in the ar-   teries":H = 12:V = 13:R$ = "TF": GOSUB 600: PRINT CL$
+ 225  HTAB 5: VTAB 12: PRINT "What about the pulmonary veins? do  they carry blood (T)oward OR (A)way fromthe heart":V = 14:H = 11:R$ = "TA": GOSUB 600
+ 230 HTAB 5: VTAB 19: PRINT "This is an exception to the rule.   The pulmonary veins carry oxygenated    blood toward the heart.": GOSUB 19000
+ 235  PRINT CL$: VTAB 2: HTAB 7: PRINT "The flow of blood through the      heart is controlled by an electrical   system. That system will be explored    next.": GOSUB 19000
+ 240 PRINT : PRINT CHR$(4);"RUN LABELS2": END 
  500 F =  NOT F:C$ = "    ":C1$ = "    ":C2$ = "    ": IF F THEN C$ = "Head":C1$ = "Lung":C2$ = "Body"
  510  VTAB 5: HTAB 27: PRINT C$: VTAB 9: HTAB 27: PRINT C1$: VTAB 17: HTAB 18: PRINT C2$: RETURN 
- 600  VTAB V: HTAB H: PRINT "?": GET A$: IF A$ <  >  RIGHT$ (R$,1) AND A$ <  >  LEFT$ (R$,1) THEN 600
+ 600  VTAB V: HTAB H: PRINT "?": GET A$ : A0 = ASC(A$): IF A0 >= 97 AND A0 <= 122 THEN A$ = CHR$(A0-32)
+ 605  IF A$ <  >  RIGHT$ (R$,1) AND A$ <  >  LEFT$ (R$,1) THEN 600
  610  IF A$ =  RIGHT$ (R$,1) THEN  VTAB V: HTAB H: PRINT "Sorry the correct answer was "; LEFT$ (R$,1): GOTO 19000
  620  IF A$ =  LEFT$ (R$,1) THEN  VTAB V: HTAB H: PRINT  LEFT$ (R$,1);" is correct": GOTO 19000
  700  PRINT : PRINT CHR$(4);"RUN HEART.MENU"

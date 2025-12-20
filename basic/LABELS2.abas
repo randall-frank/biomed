@@ -9,7 +9,7 @@
  20  VTAB 7: PRINT "by a specialized conducting pathway."; SPC( 44);"Proper functioning of this pathway is"; SPC( 43);"required for a regular beat."
  25  GOSUB 19000
  30  PRINT CL$: VTAB 1: PRINT " Mechanical pumping (contraction) of the"; SPC( 40);"heart is due to .......... activity     "; SPC( 40);"originating from a specialized area": PRINT : PRINT "within the heart."
- 35 V = 3:H = 17:A$ = "ELECTRICAL": GOSUB 21000: GOSUB 19000
+ 35 V = 3:H = 17:A$ = "electrical": GOSUB 21000: GOSUB 19000
  36  PRINT CL$: VTAB 1: HTAB 22: PRINT "Two key areas, the"; SPC( 61);"sinoatrial node (SA"; SPC( 61);"node) and the atrio-"; SPC( 60);"ventricular node (AV"; SPC( 60);"node) are responsi-"; SPC( 61);
  37  PRINT "ble for initiating  "; SPC( 60);"and conducting the"; SPC( 62);"electrical signals  "; SPC( 60);"of the heart."
  38 A = 1: GOSUB 20000: GOSUB 19000: CALL 18944: VTAB 7: HTAB 3: PRINT "SA";: VTAB 8: HTAB 8: PRINT "AV";: GOSUB 19000
@@ -17,7 +17,7 @@
  45 A = 0: FOR T = 1 TO 100: GOSUB 20000: IF A = 0 THEN A = 2: GOTO 47
  46  IF A = 2 THEN A = 0
  47  NEXT T: GOSUB 19000
- 50  PRINT CL$: VTAB 1: PRINT " The SA node is located in the wall of  "; SPC( 40);"the right ...... .":V = 3:H = 11:A$ = "ATRIUM": GOSUB 21000: GOSUB 19000
+ 50  PRINT CL$: VTAB 1: PRINT " The SA node is located in the wall of  "; SPC( 40);"the right ...... .":V = 3:H = 11:A$ = "atrium": GOSUB 21000: GOSUB 19000
  60  PRINT CL$: VTAB 1: HTAB 22: PRINT "The signal from the"; SPC( 60);"SA node stimulates"; SPC( 62);"contraction of the"; SPC( 62);"atria while also"; SPC( 64);"passing to the AV"; SPC( 63);"node. In order to"; SPC( 63);"reach the ventricles"; SPC( 60);
  61  PRINT "the electrical      "; SPC( 60);"signal must travel  "; SPC( 60);"through the AV node.": VTAB 23: HTAB 8: PRINT "Press 'RETURN' to continue"
  62  POKE 49168,1: FOR A = 2 TO 5
@@ -26,7 +26,7 @@
  65  FOR W = 1 TO 200: NEXT W: NEXT A
  66  IF  PEEK (49152) <  > 141 THEN  GOTO 62
  67  PRINT CL$: VTAB 1: HTAB 1: PRINT " The .......... signal from the SA node  "; SPC( 40);"stimulates contraction of the atria"; SPC( 45);"while passing on to the .. node."
- 68 V = 1:H = 6:A$ = "ELECTRICAL": GOSUB 21000:V = 5:H = 26:A$ = "AV": GOSUB 21000: GOSUB 19000
+ 68 V = 1:H = 6:A$ = "electrical": GOSUB 21000:V = 5:H = 26:A$ = "AV": GOSUB 21000: GOSUB 19000
  70  PRINT CL$: VTAB 1: HTAB 22: PRINT "The AV node normal-"; SPC( 60);"ly produces about"; SPC( 63);"0.1sec. delay before"; SPC( 60);"passing the signal"; SPC( 62);"on. This delay al-"; SPC( 62);"lows the atria to"; SPC( 63);
  71  PRINT "pump their blood"; SPC( 64);"into the ventricles"; SPC( 61);"before the ventri-"; SPC( 62);"cles contract.": POKE 49168,1
  72  VTAB 23: HTAB 8: PRINT "Press 'RETURN' to continue";
@@ -34,16 +34,16 @@
  74  GOSUB 20000
  75  FOR Q = 1 TO 200: NEXT Q: NEXT A
  76  IF  PEEK (49152) <  > 141 THEN 73
- 80  PRINT CL$: VTAB 1: PRINT " The .. node receives the electri- "; SPC( 45);"cal signal from the sa node and passes  "; SPC( 40);"it on to the ventricle.":K = 2:V = 1:H = 6:A$ = "AV": GOSUB 21000:K = 3
+ 80  PRINT CL$: VTAB 1: PRINT " The .. node receives the electrical"; SPC( 44);"signal from the sa node and passes it on"; SPC( 40);"to the ventricle.":K = 2:V = 1:H = 6:A$ = "AV": GOSUB 21000:K = 3
  82  VTAB 9: HTAB 2: PRINT "The AV node normally has about ... sec."; SPC( 40);"delay before it passes its signal on to "; SPC( 40);"the ventricles. This allows contraction "; SPC( 40);"of the ..... to be completed before": PRINT 
- 83  PRINT "contraction of the ventricles.":V = 9:H = 33:A$ = "0.1": GOSUB 21000:V = 15:H = 8:A$ = "ATRIA": GOSUB 21000: GOSUB 19000
+ 83  PRINT "contraction of the ventricles.":V = 9:H = 33:A$ = "0.1": GOSUB 21000:V = 15:H = 8:A$ = "atria": GOSUB 21000: GOSUB 19000
  84  PRINT CL$: VTAB 1: HTAB 2: PRINT "After the brief delay, the AV node"; SPC( 45);"passes the signal on to the ventricle   "; SPC( 40);"which also responds with a muscular con-"; SPC( 40);"traction.": PRINT : PRINT CHR$(4);"BLOAD EKG": GOSUB 19000
  90  PRINT CL$: VTAB 1: HTAB 22: PRINT "The electrical sig-"; SPC( 20);"nals from the heart "; SPC( 20);"can also be detected"; SPC( 20);"elsewhere in the"; SPC( 24);"body by means of an "; SPC( 20);"electrocardiograph"; SPC( 22);"(abbreviated EKG or "; SPC( 20)
  91  VTAB 8: HTAB 21: PRINT "ECG). The EKG pro-"; SPC( 22);"duces a graphic dis-"; SPC( 20);"play by sensing the "; SPC( 20);"electrical signal"; SPC( 23);"through electrodes"; SPC( 22);
  92  PRINT "attached to the sur-"; SPC( 20);"face of the body."; SPC( 23);"Typical points of"; SPC( 23);"attachment are shown"; SPC( 20);"in the diagram. How-"; SPC( 20);
  93  PRINT "ever, these may vary"; SPC( 20);"with the situation."
  94 A = 1: GOSUB 20000: GOSUB 19000:K = 6
- 95  PRINT CL$: VTAB 1: HTAB 2: PRINT "The electrical activity of the heart"; SPC( 43);"can be monitored with an instrument     "; SPC( 40);"called the .................. .":H = 12:V = 5:A$ = "ELECTROCARDIOGRAPH": GOSUB 21000: GOSUB 19000
+ 95  PRINT CL$: VTAB 1: HTAB 2: PRINT "The electrical activity of the heart"; SPC( 43);"can be monitored with an instrument     "; SPC( 40);"called the .................. .":H = 12:V = 5:A$ = "electrocardiograph": GOSUB 21000: GOSUB 19000
  96 K = 3: PRINT CL$: VTAB 1: HTAB 22: PRINT "This is a normal"; SPC( 23);"heart's EKG tracing."; SPC( 20);"Each of the various"; SPC( 21);"regions have been"; SPC( 23);"assigned letter"; SPC( 25);
  97  PRINT "names which corre-"; SPC( 22);"spond with a specif-"; SPC( 20);"ic event within the"; SPC( 21);"heart."
  99  POKE 0,0: POKE 1,0: POKE 3,75: POKE 4,0: CALL 768
@@ -55,37 +55,34 @@
  105  POKE 49168,1: POKE 6,4
  106  CALL 18944: FOR W = 1 TO 10: NEXT W: IF  PEEK (49152) <  > 141 THEN 106
  110  PRINT CL$: VTAB 2: HTAB 2: PRINT "Atrial depolarization corresponds with the . wave.":V = 3:H = 5:A$ = "P":K = 1: GOSUB 21000:K = 3
- 111  VTAB 5: HTAB 2: PRINT "Ventricular depolarization corresponds with the ........... wave.":V = 6:H = 10:A$ = "QRS-COMPLEX": GOSUB 21000
+ 111  VTAB 5: HTAB 2: PRINT "Ventricular depolarization corresponds with the ........... .":V = 6:H = 10:A$ = "QRS complex": GOSUB 21000
  112  VTAB 8: HTAB 2: PRINT "Ventricular repolarization corresponds with the . wave.":K = 1:V = 9:H = 10:A$ = "T": GOSUB 21000:K = 3: GOSUB 19000
- 115  PRINT CL$: VTAB 1: HTAB 2: PRINT "The EKG is especially valuable in dis- covering abnormal electrical activity inthe heart.  Such abnormalities include  partial or complete heart block";
- 116  PRINT " in whichthe electrical signals are not transmit-ted properly from atria to ventricles."
- 117  VTAB 8: HTAB 9: PRINT "Normal"; SPC( 11);"Blocked": VTAB 23: HTAB 8: PRINT "Press 'RETURN' to continue": POKE 49168,1
- 118  FOR A = 2 TO 8:Q = 0
- 119  POKE 0,5: POKE 1,72: POKE 3,75 + (A * 5): POKE 4,0: CALL 768
- 120  POKE 0,23: POKE 1,72: POKE 3,75 + (A * 5): POKE 4,0
- 121  IF A > 5 THEN  POKE 3,100
- 122  CALL 768
- 123  FOR W = 1 TO 100: NEXT W
- 124  NEXT A: FOR W = 1 TO 300: IF  PEEK (49152) = 141 THEN W = 300:Q = 999
- 125  NEXT W: IF Q <  > 999 THEN 118
  130  PRINT : PRINT : PRINT CHR$(4);"RUN LABELS2E"
  140  PRINT : PRINT CHR$(4);"RUN HEART.MENU"
- 1000  END 
+ 1000  END
+ 5000  OK = 1
+ 5020  FOR LL=1 TO K : T0 = ASC(MID$(T$,LL,1)) : A0 = ASC(MID$(A$,LL,1))
+ 5030  IF T0 > 96 AND T0 < 123 THEN T0 = T0 - 32
+ 5040  IF A0 > 96 AND A0 < 123 THEN A0 = A0 - 32
+ 5050  IF T0 < > A0 THEN OK = 0
+ 5060 NEXT LL
+ 5070 RETURN
  19000  VTAB 23: HTAB 8: PRINT "Press 'RETURN' to continue";: POKE  - 16368,1
  19001  IF  PEEK ( - 16384) <  > 141 THEN 19001
  19002  FOR T = 19 TO 23: VTAB T: HTAB 1: PRINT  SPC( 40): NEXT T: RETURN 
  20000  POKE 0,4: POKE 1,20: POKE 4,0: POKE 3,75 + A * 5: CALL 768: RETURN 
  21000  HTAB H: VTAB V:T$ = "":L = 0: POKE 49168,1:K =  LEN (A$)
  21010  VTAB V: HTAB H + L: INVERSE : PRINT ".";: NORMAL 
- 21012  VTAB V: HTAB H + L: GET T1$
- 21013  IF T1$ =  CHR$ (8) THEN  GOSUB 21100: GOTO 21010
- 21014  IF T1$ < " " THEN 21012
- 21015  VTAB V: HTAB H + L: PRINT T1$;:L = L + 1:T$ = T$ + T1$
- 21017  IF L < K THEN 21010
- 21030  IF T$ =  LEFT$ (A$,K) THEN  HTAB H: VTAB V: PRINT A$;:L = 1: RETURN 
- 21035  HTAB H: VTAB V
- 21040  FOR L = 1 TO  LEN (A$)
- 21050  PRINT  MID$ (A$,L,1);
- 21060  FOR LL = 1 TO 50:Q =  PEEK ( - 16336): NEXT LL
+ 21020  VTAB V: HTAB H + L: GET T1$
+ 21025  IF T1$ =  CHR$ (8) THEN  GOSUB 21100: GOTO 21010
+ 21030  IF T1$ < " " THEN 21020
+ 21035  VTAB V: HTAB H + L: PRINT T1$;:L = L + 1:T$ = T$ + T1$
+ 21040  IF L < K THEN 21010
+ 21045  GOSUB 5000
+ 21047  IF OK = 1 THEN  HTAB H: VTAB V: PRINT A$;:L = 1: RETURN 
+ 21050  HTAB H: VTAB V
+ 21055  FOR L = 1 TO  LEN (A$)
+ 21060  PRINT  MID$ (A$,L,1);
+ 21065  FOR LL = 1 TO 50:Q =  PEEK ( - 16336): NEXT LL
  21070  NEXT L:L = 0: RETURN 
- 21100 L = 0:T$ = "": VTAB V: HTAB H: PRINT  LEFT$ ("...................",K);: RETURN 
+ 21100 L = 0:T$ = "": VTAB V: HTAB H: PRINT  LEFT$ ("...................",K);: RETURN

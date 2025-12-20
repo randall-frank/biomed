@@ -5,5 +5,5 @@
  50  REM  Install the generator
  60  CALL 8 * 4096 + 15 * 256
  70  POKE 230, 32 : REM $E6 -> $20 for HGR1 MASSDRAW.OBJ0
- 80  PRINT  CHR$ (4);"RUN HEART.MENU"
+ 90  PRINT  CHR$ (4);"RUN HEART.MENU"
  
