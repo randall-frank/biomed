@@ -26,12 +26,14 @@ heart and the electrical system and it's relationship to the heartbeat.
 
 .. image:: animate.gif
    :alt: Heartbeat
+   :width: 50%
    :align: center
 
 | 
 
 .. image:: ekg.gif
    :alt: EKG
+   :width: 50%
    :align: center
 
 
