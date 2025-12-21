@@ -34,7 +34,7 @@
  74  GOSUB 20000
  75  FOR Q = 1 TO 200: NEXT Q: NEXT A
  76  IF  PEEK (49152) <  > 141 THEN 73
- 80  PRINT CL$: VTAB 1: PRINT " The .. node receives the electrical"; SPC( 44);"signal from the sa node and passes it on"; SPC( 40);"to the ventricle.":K = 2:V = 1:H = 6:A$ = "AV": GOSUB 21000:K = 3
+ 80  PRINT CL$: VTAB 1: PRINT " The .. node receives the electrical"; SPC( 44);"signal from the SA node and passes it on"; SPC( 40);"to the ventricle.":K = 2:V = 1:H = 6:A$ = "AV": GOSUB 21000:K = 3
  82  VTAB 9: HTAB 2: PRINT "The AV node normally has about ... sec."; SPC( 40);"delay before it passes its signal on to "; SPC( 40);"the ventricles. This allows contraction "; SPC( 40);"of the ..... to be completed before": PRINT 
  83  PRINT "contraction of the ventricles.":V = 9:H = 33:A$ = "0.1": GOSUB 21000:V = 15:H = 8:A$ = "atria": GOSUB 21000: GOSUB 19000
  84  PRINT CL$: VTAB 1: HTAB 2: PRINT "After the brief delay, the AV node"; SPC( 45);"passes the signal on to the ventricle   "; SPC( 40);"which also responds with a muscular con-"; SPC( 40);"traction.": PRINT : PRINT CHR$(4);"BLOAD EKG": GOSUB 19000
